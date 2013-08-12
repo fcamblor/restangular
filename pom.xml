@@ -90,7 +90,48 @@
     <!-- ================================================================================ -->
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${project.build.javaVersion}</source>
+                        <target>${project.build.javaVersion}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>net.thecodersbreakfast.restangular.server.rest.application.RestangularComponent</mainClass>
+                                </transformer>
+                                <!--
+                                Needed in order to merge restx FactoryMachine SPI
+                                (provided in restx libs + in current project)
+                                -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                  <resource>META-INF/services/restx.factory.FactoryMachine</resource>
+                                </transformer>
+                            </transformers>
+                            <finalName>restangular-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
