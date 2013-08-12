@@ -41,7 +41,7 @@ public class TodoResource {
         this.repository = repository;
     }
 
-    @GET("/todos/{todoId}")
+    @GET("/rest/todos/{todoId}")
     public Optional<Todo> get(Long todoId) {
         // Transforming Todo into an optional
         // If absent, will return a 404, otherwise the Todo will be returned
@@ -50,7 +50,7 @@ public class TodoResource {
         return Optional.of(repository.get(todoId));
     }
 
-    @PUT("/todos/{todoId}")
+    @PUT("/rest/todos/{todoId}")
     // Restx doesn't allow void return type (it won't compile if this is the case)
     // In our case, we'll return the updated Todo
     public Todo update(Long todoId, Todo todo) throws IOException {
@@ -58,7 +58,7 @@ public class TodoResource {
         return todo;
     }
 
-    @DELETE("/todos/{todoId}")
+    @DELETE("/rest/todos/{todoId}")
     // Restx doesn't allow void return type (it won't compile if this is the case)
     // In our case, we'll return a "deleted" status
     public Status remove(Long todoId) {

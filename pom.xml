@@ -21,7 +21,7 @@
     <groupId>net.thecodersbreakfast</groupId>
     <artifactId>restangular</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Angular.js + RESTlet integration</name>
 
     <!-- ================================================================================ -->
@@ -72,7 +72,7 @@
         </dependency>
         <dependency>
             <groupId>io.restx</groupId>
-            <artifactId>restx-server-jetty</artifactId>
+            <artifactId>restx-server-simple</artifactId>
             <version>${restx.version}</version>
         </dependency>
         <!-- Providing some slf4j implementation -->

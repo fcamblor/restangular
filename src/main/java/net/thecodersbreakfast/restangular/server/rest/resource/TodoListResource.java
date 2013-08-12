@@ -39,12 +39,12 @@ public class TodoListResource {
         this.repository = repository;
     }
 
-    @GET("/todos")
+    @GET("/rest/todos")
     public List<Todo> list() {
         return repository.list();
     }
 
-    @POST("/todos")
+    @POST("/rest/todos")
     public Todo create(Todo todo) throws IOException {
         repository.create(todo);
         // Would be useful to return the created Todo, with its id here...
