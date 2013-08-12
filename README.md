@@ -7,16 +7,11 @@ This project demonstrates how nicely Restlet & AngularJS interact.
 
 From the project root, run :
 
-    mvn package
+    mvn jetty:run
 
-Maven will create an auto-executable jar named restangular-1.0.jar in the `target` subdirectory.
-
-The embedded web server can be run with :
-
-     java -jar restangular-1.0.jar
+Maven will run restangular in an embedded jetty server.
 
 The application is then available at : `http://localhost:8000/index.html`.
-
 
 
 ## Frameworks
