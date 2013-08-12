@@ -15,14 +15,14 @@ The embedded web server can be run with :
 
      java -jar restangular-1.0.jar
 
-The application is then available at : `http://localhost:8000/web/index.html`.
+The application is then available at : `http://localhost:8000/index.html`.
 
 
 
 ## Frameworks
 
 * [AngularJS](http://angularjs.org) is a Javascript framework developed by Google.
-* [Restlet](http://restlet.org) is a Java project that allows to easily expose and consume REST resources.
+* [RestX](http://restx.io) is a Java project that allows to easily expose and consume REST resources.
 
 ## Licence
 This project is published under the Apache 2.0 licence (see LICENCE-2.0.txt).
