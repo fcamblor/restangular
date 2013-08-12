@@ -27,6 +27,9 @@ public class RestangularComponent extends Component {
     }
 
     public RestangularComponent() {
+        long start = System.currentTimeMillis();
+
+
         Server server = new Server(Protocol.HTTP, 8000);
         getServers().add(server);
         //server.getContext().getParameters().set("tracing", "true");
@@ -35,6 +38,7 @@ public class RestangularComponent extends Component {
 
         getDefaultHost().attachDefault(new RestangularApplication());
 
+        System.out.println(String.format("Server started in %d ms", System.currentTimeMillis()-start));
         System.out.println("Server started on port 8000.");
         System.out.println("Application is now available on http://localhost:8000/web/index.html");
     }
