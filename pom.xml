@@ -126,16 +126,13 @@
                                 </filter>
                             </filters>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>net.thecodersbreakfast.restangular.server.rest.application.RestangularComponent</mainClass>
-                                </transformer>
                                 <!--
                                 Needed in order to merge restx FactoryMachine SPI
                                 (provided in restx libs + in current project)
                                 -->
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                  <resource>META-INF/services/restx.factory.FactoryMachine</resource>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>net.thecodersbreakfast.restangular.server.rest.application.RestangularComponent</mainClass>
                                 </transformer>
                             </transformers>
                             <finalName>restangular-${project.version}</finalName>
