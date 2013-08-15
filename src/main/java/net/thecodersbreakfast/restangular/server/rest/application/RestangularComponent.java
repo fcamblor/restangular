@@ -29,11 +29,13 @@ public class RestangularComponent {
                 // /rest/* resources for "standard" routers, and /web/* for resources router
                 // Drawback : having to add a "/rest" prefix on every existing routes, which sounds weird
                 // Don't see how to be better here...
+                // xhanin's feedback on the issue :
+                // https://github.com/fcamblor/restangular/commit/a40f0727a304ab195c8ac36588ec6404d826a704#commitcomment-3840465
                 .setRouterPath("")
                 .build();
         simpleWebServer.startAndAwait();
 
         System.out.println("Server started on port 8000.");
-        System.out.println("Application is now available on http://localhost:8000/index.html");
+        System.out.println("Application is now available on http://localhost:8000/web/index.html");
     }
 }
